@@ -8,8 +8,7 @@ def encode_image(imgpath, text):
     for char in text:
         # print(char_to_binary(char))
         binary_text += char_to_binary(char)
-    binary_text += "00000000"
-
+    binary_text += "11111111"
     img_name = os.path.basename(imgpath).split('.')[0]
     text_index = 0
     try:

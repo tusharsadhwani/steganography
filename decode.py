@@ -22,12 +22,12 @@ def decode_image(imgpath):
                         byte += "0"
                     
                     if len(byte) == 8:
-                        if byte == "00000000":
+                        if byte == "11111111":
                             break
                         # print(byte)
                         out += byte
                         byte = ""
-                if byte == "00000000":
+                if byte == "11111111":
                     break
             
             
