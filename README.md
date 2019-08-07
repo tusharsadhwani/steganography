@@ -6,6 +6,7 @@ Open a terminal and type:
 
     git clone https://github.com/tusharsadhwani/image-encode.git
     cd image-encode
+    pip install -r requirements.txt
 
 # How to run:
 
