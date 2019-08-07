@@ -66,7 +66,7 @@ if __name__ == "__main__":
         if os.path.exists(args.image):
             decode_image(args.image)
         else:
-            msg = "{} doesn't exist"
+            msg = "File '{}' doesn't exist"
             raise ValueError(msg.format(args.image))
     else:
         parser.print_help(sys.stderr)

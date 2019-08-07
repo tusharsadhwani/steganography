@@ -71,10 +71,10 @@ if __name__ == "__main__":
                 
                 encode_image(args.image, text)
             else:
-                msg = "{} doesn't exist"
+                msg = "File '{}' doesn't exist"
                 raise ValueError(msg.format(args.text))
         else:
-            msg = "{} doesn't exist"
+            msg = "File '{}' doesn't exist"
             raise ValueError(msg.format(args.image))
     else:
         parser.print_help(sys.stderr)
