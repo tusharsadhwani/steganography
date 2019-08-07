@@ -3,6 +3,7 @@ import os.path
 import sys
 from PIL import Image
 
+
 def encode_image(imgpath, text):
     binary_text = ""
     for char in text:
@@ -55,18 +56,23 @@ def char_to_binary(char):
         raise ValueError("Unknown Input Characters.")
     return "{:0>8s}".format(bin(ord(char))[2:])
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--image", help="path to image to be encoded")
     parser.add_argument("--text", help="text to be encoded in")
     
     args = parser.parse_args()
-    if args.image and args.text:
-        if os.path.exists(args.image) and os.path.exists(args.text):
-            with open(args.text, 'r') as textfile:
-                text = textfile.read()
-            
-            encode_image(args.image, text)
+    if args.image:
+        if args.text:
+            if os.path.exists(args.image) and os.path.exists(args.text):
+                with open(args.text, 'r') as textfile:
+                    text = textfile.read()
+                
+                encode_image(args.image, text)
+            else:
+                msg = "{} doesn't exist"
+                raise ValueError(msg.format(args.text))
         else:
             msg = "{} doesn't exist"
             raise ValueError(msg.format(args.image))

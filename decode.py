@@ -3,6 +3,7 @@ import os.path
 import sys
 from PIL import Image
 
+
 def decode_image(imgpath):
     img_name = os.path.basename(imgpath).split('.')[0]
 
@@ -54,6 +55,7 @@ def binary_to_char(binary):
         print(binary)
         raise ValueError("Unknown Input Characters.")
     return chr(asc)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
