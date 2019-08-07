@@ -2,10 +2,10 @@
 A steganographic image encoder and decoder written in Python3.6
 
 # Installation:
+Open a terminal and type:
 
-    mkdir image-encode
-    cd image-encode
     git clone https://github.com/tusharsadhwani/image-encode.git
+    cd image-encode
 
 # How to run:
 
