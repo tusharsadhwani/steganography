@@ -26,5 +26,5 @@ This will create an image named `encoded-dog.png`, which will have the message e
 
     python decode.py --image=encoded-dog.png
  
- this will create a textfile named `decoded-encoded-dog.txt`, whose contents should be identical to `encode.txt`
+ this will create a textfile named `dog.txt`, whose contents should be identical to `encode.txt`
  

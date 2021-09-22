@@ -4,6 +4,10 @@ import sys
 from PIL import Image
 
 
+def remove_encoded(filename):
+    """Removes 'encoded-' from the beginning of the filename"""
+    return filename[8:]
+
 def decode_image(imgpath):
     img_name = os.path.basename(imgpath).split('.')[0]
 
@@ -37,7 +41,10 @@ def decode_image(imgpath):
                 byte = out[i:i+8]
                 output_text += binary_to_char(byte)
 
-            outfile_name = f"decoded-{img_name}.txt"
+            if img_name.startswith('encoded-'):
+                outfile_name = f"{remove_encoded(img_name)}.txt"
+            else:
+                outfile_name = f"decoded-{img_name}.txt"
             with open(outfile_name, 'w') as outfile:
                 outfile.write(output_text)
             
